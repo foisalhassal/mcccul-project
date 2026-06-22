@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCCUL Charity</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body style="margin:0; min-height:100vh; background:linear-gradient(to right,#000000,#4da6ff,#000000);">
+
+    <!-- NAVBAR -->
+    <div class="navbar sticky top-0 z-50 bg-black/40 backdrop-blur-md">
+
+        <div class="navbar-start">
+            <a class="btn btn-ghost text-3xl font-bold text-white">
+                MCCUL
+            </a>
+        </div>
+
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-white text-lg">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-end">
+            <a class="btn btn-primary">DONATE</a>
+        </div>
+
+    </div>
+
+    <!-- HOME SECTION -->
+    <section id="home">
+
+        <div class="flex justify-center mt-6">
+
+            <div class="carousel w-[75%] h-[350px] rounded-2xl overflow-hidden shadow-2xl">
+
+                <div id="slide1" class="carousel-item relative w-full">
+                    <img src="1.jpeg" class="w-full object-cover">
+                </div>
+
+                <div id="slide2" class="carousel-item relative w-full">
+                    <img src="2.jpeg" class="w-full object-cover">
+                </div>
+
+                <div id="slide3" class="carousel-item relative w-full">
+                    <img src="3.jpeg" class="w-full object-cover">
+                </div>
+
+                <div id="slide4" class="carousel-item relative w-full">
+                    <img src="4.jpeg" class="w-full object-cover">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- AUTO SLIDE -->
+    <script>
+        const slides = document.querySelectorAll(".carousel-item");
+        let current = 0;
+
+        setInterval(() => {
+            current = (current + 1) % slides.length;
+
+            slides[current].scrollIntoView({
+                behavior: "smooth",
+                inline: "start"
+            });
+
+        }, 3000);
+    </script>
+
+</body>
+
+</html>
